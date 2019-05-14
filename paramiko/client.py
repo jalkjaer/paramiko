@@ -359,6 +359,7 @@ class SSHClient(ClosingContextManager):
             # ones, of a subclass that client code should still be watching for
             # (socket.error)
             if len(errors) == len(to_try):
+                sock.close()
                 raise NoValidConnectionsError(errors)
 
         t = self._transport = Transport(

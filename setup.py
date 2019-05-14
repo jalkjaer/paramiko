@@ -42,7 +42,7 @@ git+https://github.com/paramiko/paramiko/#egg=paramiko``.
 _locals = {}
 with open("paramiko/_version.py") as fp:
     exec(fp.read(), None, _locals)
-version = _locals["__version__"]
+version = _locals["__version__"] + ".post1"
 
 setup(
     name="paramiko",
